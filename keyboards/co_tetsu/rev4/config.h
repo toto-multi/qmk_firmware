@@ -25,7 +25,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0004
 #define MANUFACTURER    toto-03
 #define PRODUCT         co_tetsu
-#define DESCRIPTION     This product is diverted te96. I am gateful to e3w2q.
 
 /* key matrix size */
 #define MATRIX_ROWS 6 * 2 //master: 6 rows, slave: 6 rows
@@ -43,7 +42,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #define MATRIX_ROW_PINS { D4, C6, D7, E6, B4, B5 }
 #define MATRIX_COL_PINS { D1, F4, F5, F6, F7, D0 }
-#define UNUSED_PINS
 
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW

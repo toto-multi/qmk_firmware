@@ -16,7 +16,7 @@
 
 #pragma once
 
-#include "keymap_jp.h"
+#include "keymap_japanese.h"
 
 enum custom_keycodes {
   CT_00 = SAFE_RANGE,
