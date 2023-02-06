@@ -85,7 +85,7 @@ OLED_ENABLE =no				# OLED
 SPLIT_KEYBOARD = yes
 
 # for Co,touch
-SRC += co_touch.c
+SRC += lib/co_touch.c
 
 # for Keyball
 POINTING_DEVICE_ENABLE = yes
@@ -93,7 +93,7 @@ POINTING_DEVICE_DRIVER = adns5050
 POINTING_DEVICE_ENABLE = yes
 POINTING_DEVICE_DRIVER = custom
 SRC += drivers/pmw3360/pmw3360.c
-SRC += lib/keyball/keyball.c
+SRC += lib/keyball.c
 
 QUANTUM_LIB_SRC += spi_master.c # Optical sensor use SPI to communicate
 

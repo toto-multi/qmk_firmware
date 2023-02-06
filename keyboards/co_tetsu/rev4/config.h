@@ -23,12 +23,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0x0000
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0004
-#define MANUFACTURER    toto-03
+#define MANUFACTURER    toto-multi
 #define PRODUCT         co_tetsu
 
 /* key matrix size */
-#define MATRIX_ROWS 6 * 2 //master: 6 rows, slave: 6 rows
-#define MATRIX_COLS 6
+#define MATRIX_ROWS     6 * 2 //master: 6 rows, slave: 6 rows
+#define MATRIX_COLS     6
 
 /*
  * Keyboard Matrix Assignments

@@ -15,7 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "co_touch.h"
+#include "lib/co_touch.h"
 
 enum keymap_layers {
   _ENG_,
