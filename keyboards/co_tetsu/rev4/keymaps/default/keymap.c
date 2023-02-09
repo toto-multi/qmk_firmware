@@ -16,6 +16,7 @@
 
 #include QMK_KEYBOARD_H
 #include "lib/co_touch.h"
+#include "lib/keyball.h"
 
 enum keymap_layers {
   _ENG_,
@@ -32,7 +33,6 @@ enum keymap_layers {
 #define   ___T_L1   LM(___ENG_, MOD_LGUI)
 #define   ___T_L2   LT(_CMD_, KC_TAB)
 #define   ___T_L3   SFT_T(KC_SPC)
-#define   ___T_L4   LM(___ENG_, MOD_LCTL)
 #define   ___T_R4   LM(___ENG_, MOD_LCTL)
 #define   ___T_R3   SFT_T(KC_BSPC)
 #define   ___T_R2   LT(_SYM_, KC_ENT)
@@ -55,8 +55,6 @@ enum keymap_layers {
 #define   ___PSTE   C(KC_V)         // 貼り付け
 #define   ___ALL_   C(KC_A)         // 全選択
 #define   ___SAVE   C(KC_S)         // 保存
-#define   ___CLSE   C(KC_W)         // 閉じる
-#define   ___QUIT   C(KC_Q)         // 終了
 #define   ___ADRS   C(KC_L)         // アドレス欄に移動
 #define   ___COUT   C(KC_SLSH)      // コメントアウト
 #define   ___UNDO   C(KC_Z)         // 元に戻す
@@ -72,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_G   ,  KC_L   ,  KC_M   ,  KC_E   ,  KC_O   , XXXXXXX,     XXXXXXX,  KC_C   ,  KC_T   ,  KC_P   ,  KC_Y   ,  KC_J   ,
     KC_B   ,  KC_2   ,  KC_1   ,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  KC_6   ,  KC_5   ,  KC_K   ,
     KC_3   ,  XXXXXXX,  XXXXXXX,  KC_0   ,  KC_9   , ___ENG_,     ___JPN_,  KC_8   ,  KC_7   ,  XXXXXXX,  XXXXXXX,  KC_4   ,
-    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  ___T_L2, ___T_L3,     ___T_R3,  ___T_R2,  ___T_R1,  XXXXXXX,  ___T_R4,  XXXXXXX
+    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  ___T_L2, ___T_L3,     ___T_R3,  ___T_R2,  ___T_R1,  XXXXXXX,  XXXXXXX,  XXXXXXX
   ),
 
   [_JPN_] = LAYOUT(
@@ -98,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CT_PSWD,  ___ALL_,  KC_BTN1,  KC_F2  ,  ___ADRS, _______,     _______,  _A_F1__,  _A_F2__,  ___CPHS,  _A_F3__,  _A_F8__,
     KC_APP ,  KC_LEFT,  KC_RGHT,  KC_UP  ,  KC_PGUP, _______,     _______,  _A_F6__,  ___COUT,  ___PSTE,  ___COPY,  _______,
     KC_PSCR,  KC_F2  ,  KC_F1  ,  KC_DOWN,  KC_PGDN, _______,     _______,  _A_F9__,  ___CUT_,  KC_F6  ,  KC_F5  ,  KC_PSCR,
-    KC_F3  ,  _______,  _______,  KC_F10 ,  KC_F9  , _______,     _______,  KC_F8  ,  KC_F7  ,  _______,  _______,  KC_F4  ,
+    KC_F3  ,  _______,  _______,  KC_F10 ,  KC_F9  , _______,     KC_RGUI,  KC_F8  ,  KC_F7  ,  _______,  _______,  KC_F4  ,
     _______,  _______,  _______,  _______,  _______, _______,     KC_DEL ,  CT_ESC ,  ___SAVE,  _______,  _______,  _______
   ),
 };
@@ -136,6 +134,8 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+  keyball_set_scroll_mode(get_highest_layer(state) == _SYM_);
+
   switch (get_highest_layer(state)) {
     case _ENG_:
       tap_code16(KC_LANG2);
@@ -146,12 +146,14 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     default:
       break;
   }
+
   #ifdef RGBLIGHT_ENABLE
   rgblight_set_layer_state(_ENG_, layer_state_cmp(state, _ENG_));
   rgblight_set_layer_state(_JPN_, layer_state_cmp(state, _JPN_));
   rgblight_set_layer_state(_SYM_, layer_state_cmp(state, _SYM_));
   rgblight_set_layer_state(_CMD_, layer_state_cmp(state, _CMD_));
   #endif
+
   return state;
 }
 
