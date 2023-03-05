@@ -68,10 +68,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ENG_] = LAYOUT(
     XXXXXXX,  KC_U   ,  KC_I   ,  XXXXXXX,  XXXXXXX, XXXXXXX,     XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_S   ,  KC_R   ,  XXXXXXX,
-    JP_COLN,  KC_A   ,  ___COMM,  KC_F   ,  KC_Z   , XXXXXXX,     XXXXXXX,  KC_Q   ,  KC_V   ,  ___DOT_,  KC_N   ,  JP_SCLN,
+    KC_Z   ,  KC_A   ,  ___COMM,  KC_F   ,  JP_COLN, XXXXXXX,     XXXXXXX,  JP_SCLN,  KC_V   ,  ___DOT_,  KC_N   ,  KC_Q   ,
     KC_G   ,  KC_L   ,  KC_M   ,  KC_E   ,  KC_O   , XXXXXXX,     XXXXXXX,  KC_C   ,  KC_T   ,  KC_P   ,  KC_Y   ,  KC_J   ,
-    KC_B   ,  KC_2   ,  KC_1   ,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  KC_6   ,  KC_5   ,  KC_K   ,
-    KC_3   ,  XXXXXXX,  XXXXXXX,  KC_0   ,  KC_9   , ___ENG_,     ___JPN_,  KC_8   ,  KC_7   ,  XXXXXXX,  XXXXXXX,  KC_4   ,
+    KC_B   ,  KC_0   ,  KC_1   ,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  KC_6   ,  KC_7   ,  KC_K   ,
+    XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_2   ,  KC_3   , ___ENG_,     ___JPN_,  KC_4   ,  KC_5   ,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  ___T_L2, ___T_L3,     ___T_R3,  ___T_R2,  ___T_R1,  XXXXXXX,  XXXXXXX,  XXXXXXX
   ),
 
@@ -85,11 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_SYM_] = LAYOUT(
-    _______,  JP_DQUO,  JP_QUOT,  _______,  _______, _______,     _______,  _______,  _______,  JP_MINS,  JP_ASTR,  _______,
-    JP_COLN,  JP_LPRN,  JP_QUES,  JP_AT  ,  JP_CIRC, _______,     _______,  JP_GRV ,  JP_UNDS,  JP_EXLM,  JP_EQL ,  JP_SCLN,
-    JP_LBRC,  JP_RPRN,  JP_HASH,  JP_LCBR,  JP_LABK, _______,     _______,  JP_AMPR,  JP_SLSH,  JP_PERC,  JP_DLR ,  JP_BSLS,
-    JP_RBRC,  _______,  _______,  JP_RCBR,  JP_RABK, _______,     _______,  JP_PIPE,  JP_PLUS,  _______,  _______,  JP_TILD,
-    _______,  _______,  _______,  _______,  _______, _______,     _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  JP_LPRN,  JP_LBRC,  _______,  _______, _______,     _______,  _______,  _______,  JP_RBRC,  JP_RPRN,  _______,
+    JP_LABK,  JP_EQL ,  JP_QUES,  JP_SLSH,  JP_COLN, _______,     _______,  JP_SCLN,  JP_GRV ,  JP_EXLM,  JP_UNDS,  JP_RABK,
+    JP_ASTR,  JP_CIRC,  JP_DLR ,  JP_MINS,  JP_LCBR, _______,     _______,  JP_QUOT,  JP_HASH,  JP_AMPR,  JP_AT  ,  JP_YEN ,
+    JP_PERC,  KC_F8  ,  KC_F9  ,  JP_PLUS,  JP_RCBR, _______,     _______,  JP_GRV ,  JP_PIPE,  KC_F6  ,  KC_F7  ,  JP_TILD,
+    _______,  _______,  _______,  KC_F2  ,  KC_F3  , _______,     _______,  KC_F4  ,  KC_F5  ,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _C_PGUP, _C_PGDN,     _______,  _______,  _______,  _______,  _______,  _______
   ),
 
@@ -97,8 +97,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  ___UNDO,  KC_BTN2,  _______,  _______, _______,     _______,  _______,  _______,  _A_F7__,  ___CPCM,  _______,
     ___REDO,  ___ALL_,  KC_BTN1,  KC_APP ,  ___ADRS, _______,     _______,  _A_F1__,  _A_F3__,  ___MENU,  ___CPHS,  _A_F8__,
     KC_PSCR,  KC_LEFT,  KC_RGHT,  KC_UP  ,  KC_PGUP, _______,     _______,  _A_F6__,  ___COUT,  ___PSTE,  ___COPY,  _A_F4__,
-    CT_PSWD,  KC_F2  ,  KC_F1  ,  KC_DOWN,  KC_PGDN, _______,     _______,  _A_F9__,  ___CUT_,  KC_F6  ,  KC_F5  ,  _A_F5__,
-    KC_F3  ,  _______,  _______,  KC_F10 ,  KC_F9  , _______,     KC_RGUI,  KC_F8  ,  KC_F7  ,  _______,  _______,  KC_F4  ,
+    CT_PSWD,  KC_8   ,  KC_9   ,  KC_DOWN,  KC_PGDN, _______,     _______,  _A_F9__,  ___CUT_,  KC_E   ,  KC_F   ,  _A_F5__,
+    _______,  _______,  _______,  KC_A   ,  KC_B   , _______,     KC_RGUI,  KC_C   ,  KC_D   ,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______, _______,     ___DEL_,  CT_ESC ,  ___SAVE,  _______,  _______,  _______
   ),
 };
@@ -181,9 +181,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return process_cotouch(keycode, record);
   }
   return true;
-}
-
-report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-  dprintf("pointing_device_task_user()¥n");
-  return mouse_report;
 }

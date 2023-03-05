@@ -28,17 +28,17 @@
 #define KANA_MAX 3
 const PROGMEM uint16_t KANA_TABLE[][2][KANA_MAX] = {
   // 左手 上段
-  {        { JP_SLSH ,XXXXXXX ,XXXXXXX }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
+  {        { JP_LABK ,JP_MINS ,KC_SPC  }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
   {        { KC_K    ,KC_O    ,XXXXXXX }, { KC_R    ,KC_I    ,XXXXXXX } },
   {        { KC_K    ,KC_I    ,XXXXXXX }, { _______ ,KC_E    ,XXXXXXX } },
   {        { KC_W    ,KC_O    ,XXXXXXX }, { KC_T    ,KC_I    ,XXXXXXX } },
-  {        { JP_LABK ,JP_MINS ,KC_SPC  }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
+  {        { JP_SLSH ,XXXXXXX ,XXXXXXX }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
   // 右手 上段
-  {        { JP_MINS ,JP_RABK ,KC_SPC  }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
+  {        { JP_ASTR ,XXXXXXX ,XXXXXXX }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
   {        { KC_M    ,KC_A    ,XXXXXXX }, { KC_H    ,KC_E    ,XXXXXXX } },
   {        { KC_N    ,KC_A    ,XXXXXXX }, { _______ ,KC_Y    ,KC_A    } },
   {        { KC_R    ,KC_U    ,XXXXXXX }, { KC_S    ,KC_A    ,XXXXXXX } },
-  {        { JP_ASTR ,XXXXXXX ,XXXXXXX }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
+  {        { JP_MINS ,JP_RABK ,KC_SPC  }, { XXXXXXX ,XXXXXXX ,XXXXXXX } },
   // 左手 中段
   {        { KC_T    ,KC_O    ,XXXXXXX }, { KC_M    ,KC_I    ,XXXXXXX } },
   {        { KC_S    ,KC_I    ,XXXXXXX }, { KC_R    ,KC_A    ,XXXXXXX } },
