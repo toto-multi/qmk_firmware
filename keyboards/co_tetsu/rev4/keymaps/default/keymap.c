@@ -39,6 +39,8 @@ enum keymap_layers {
 #define   ___T_R1   LM(___ENG_, MOD_RALT)
 #define   ___COMM   CTL_T(KC_COMM)
 #define   ___DOT_   CTL_T(KC_DOT)
+#define   ___MENU   CTL_T(KC_F11)
+#define   ___DEL_   SFT_T(KC_DEL)
 #define   _C_PGUP   C(KC_PGUP)
 #define   _C_PGDN   C(KC_PGDN)
 #define   _A_F1__   A(KC_F1)
@@ -66,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ENG_] = LAYOUT(
     XXXXXXX,  KC_U   ,  KC_I   ,  XXXXXXX,  XXXXXXX, XXXXXXX,     XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_S   ,  KC_R   ,  XXXXXXX,
-    KC_Q   ,  KC_A   ,  ___COMM,  KC_F   ,  KC_Z   , XXXXXXX,     XXXXXXX,  JP_COLN,  KC_V   ,  ___DOT_,  KC_N   ,  JP_SCLN,
+    JP_COLN,  KC_A   ,  ___COMM,  KC_F   ,  KC_Z   , XXXXXXX,     XXXXXXX,  KC_Q   ,  KC_V   ,  ___DOT_,  KC_N   ,  JP_SCLN,
     KC_G   ,  KC_L   ,  KC_M   ,  KC_E   ,  KC_O   , XXXXXXX,     XXXXXXX,  KC_C   ,  KC_T   ,  KC_P   ,  KC_Y   ,  KC_J   ,
     KC_B   ,  KC_2   ,  KC_1   ,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  KC_6   ,  KC_5   ,  KC_K   ,
     KC_3   ,  XXXXXXX,  XXXXXXX,  KC_0   ,  KC_9   , ___ENG_,     ___JPN_,  KC_8   ,  KC_7   ,  XXXXXXX,  XXXXXXX,  KC_4   ,
@@ -84,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYM_] = LAYOUT(
     _______,  JP_DQUO,  JP_QUOT,  _______,  _______, _______,     _______,  _______,  _______,  JP_MINS,  JP_ASTR,  _______,
-    JP_GRV ,  JP_LPRN,  JP_QUES,  JP_AT  ,  JP_CIRC, _______,     _______,  JP_COLN,  JP_UNDS,  JP_EXLM,  JP_EQL ,  JP_SCLN,
+    JP_COLN,  JP_LPRN,  JP_QUES,  JP_AT  ,  JP_CIRC, _______,     _______,  JP_GRV ,  JP_UNDS,  JP_EXLM,  JP_EQL ,  JP_SCLN,
     JP_LBRC,  JP_RPRN,  JP_HASH,  JP_LCBR,  JP_LABK, _______,     _______,  JP_AMPR,  JP_SLSH,  JP_PERC,  JP_DLR ,  JP_BSLS,
     JP_RBRC,  _______,  _______,  JP_RCBR,  JP_RABK, _______,     _______,  JP_PIPE,  JP_PLUS,  _______,  _______,  JP_TILD,
     _______,  _______,  _______,  _______,  _______, _______,     _______,  _______,  _______,  _______,  _______,  _______,
@@ -92,12 +94,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_CMD_] = LAYOUT(
-    _______,  ___UNDO,  KC_BTN2,  _______,  _______, _______,     _______,  _______,  _______,  ___CPCM,  _A_F7__,  _______,
-    CT_PSWD,  ___ALL_,  KC_BTN1,  KC_F2  ,  ___ADRS, _______,     _______,  _A_F1__,  _A_F2__,  ___CPHS,  _A_F3__,  _A_F8__,
-    KC_APP ,  KC_LEFT,  KC_RGHT,  KC_UP  ,  KC_PGUP, _______,     _______,  _A_F6__,  ___COUT,  ___PSTE,  ___COPY,  _______,
-    KC_PSCR,  KC_F2  ,  KC_F1  ,  KC_DOWN,  KC_PGDN, _______,     _______,  _A_F9__,  ___CUT_,  KC_F6  ,  KC_F5  ,  KC_PSCR,
+    _______,  ___UNDO,  KC_BTN2,  _______,  _______, _______,     _______,  _______,  _______,  _A_F7__,  ___CPCM,  _______,
+    ___REDO,  ___ALL_,  KC_BTN1,  KC_APP ,  ___ADRS, _______,     _______,  _A_F1__,  _A_F3__,  ___MENU,  ___CPHS,  _A_F8__,
+    KC_PSCR,  KC_LEFT,  KC_RGHT,  KC_UP  ,  KC_PGUP, _______,     _______,  _A_F6__,  ___COUT,  ___PSTE,  ___COPY,  _A_F4__,
+    CT_PSWD,  KC_F2  ,  KC_F1  ,  KC_DOWN,  KC_PGDN, _______,     _______,  _A_F9__,  ___CUT_,  KC_F6  ,  KC_F5  ,  _A_F5__,
     KC_F3  ,  _______,  _______,  KC_F10 ,  KC_F9  , _______,     KC_RGUI,  KC_F8  ,  KC_F7  ,  _______,  _______,  KC_F4  ,
-    _______,  _______,  _______,  _______,  _______, _______,     KC_DEL ,  CT_ESC ,  ___SAVE,  _______,  _______,  _______
+    _______,  _______,  _______,  _______,  _______, _______,     ___DEL_,  CT_ESC ,  ___SAVE,  _______,  _______,  _______
   ),
 };
 
