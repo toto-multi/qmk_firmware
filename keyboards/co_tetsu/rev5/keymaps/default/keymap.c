@@ -86,9 +86,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYM_] = LAYOUT(
     _______,  JP_LBRC,  JP_LPRN,  _______,  _______, _______,     _______,  _______,  _______,  JP_RPRN,  JP_RBRC,  _______,
-    JP_LABK,  JP_EQL ,  JP_QUES,  JP_SLSH,  JP_COLN, _______,     _______,  JP_SCLN,  JP_DQUO,  JP_EXLM,  JP_UNDS,  JP_RABK,
-    JP_ASTR,  JP_CIRC,  JP_DLR ,  JP_MINS,  JP_LCBR, _______,     _______,  JP_QUOT,  JP_HASH,  JP_AMPR,  JP_AT  ,  JP_YEN ,
-    JP_PERC,  KC_F10 ,  KC_F1  ,  JP_PLUS,  JP_RCBR, _______,     _______,  JP_GRV ,  JP_PIPE,  KC_F6  ,  KC_F7  ,  JP_TILD,
+    JP_LABK,  JP_PLUS,  JP_QUES,  JP_ASTR,  JP_COLN, _______,     _______,  JP_SCLN,  JP_DQUO,  JP_EXLM,  JP_UNDS,  JP_RABK,
+    JP_EQL ,  JP_CIRC,  JP_DLR ,  JP_MINS,  JP_LCBR, _______,     _______,  JP_QUOT,  JP_HASH,  JP_AMPR,  JP_AT  ,  JP_YEN ,
+    JP_PERC,  KC_F10 ,  KC_F1  ,  JP_SLSH,  JP_RCBR, _______,     _______,  JP_GRV ,  JP_PIPE,  KC_F6  ,  KC_F7  ,  JP_TILD,
     KC_F9  ,  _______,  _______,  KC_F2  ,  KC_F3  , _______,     _______,  KC_F4  ,  KC_F5  ,  _______,  _______,  KC_F8  ,
     _______,  _______,  _______,  _______,  _C_PGUP, _C_PGDN,     _______,  _______,  _______,  _______,  _______,  _______
   ),
