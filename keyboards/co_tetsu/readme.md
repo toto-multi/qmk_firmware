@@ -1,23 +1,59 @@
-# te96
+# 虎徹（こてつ）
 
-![te96](https://github.com/e3w2q/te96-keyboard/blob/master/doc/natto48/image/natto48.jpg?raw=true)
+**te96**と**Keyball**と**Gravity Keycaps**を組み合わせた47%分割キーボードです。
 
-Expandable keyboard PCB with a smaller pitch.
+## 特徴
 
-Keyboard Maintainer: [e3w2q](https://github.com/e3w2q)  
-Hardware Supported: [te96 PCB](https://github.com/e3w2q/te96-keyboard/tree/master/pcb), Pro Micro ATmega32u4  
-Hardware Availability: [te96 Repository](https://github.com/e3w2q/te96-keyboard/)
+### ハードウェア
 
-Make example for this keyboard (after setting up your build environment):
+- 片手４段5列（小指外側なし）
+- カラムスタッカード
+- 狭ピッチ
+- ロープロファイル（Choc Sunset tactile）
+- 左手親指トラックボール
+- バックライトLED
 
-    qmk compile -kb e3w2q/te96/rev1 -km default
+### ソフトウェア
 
-Example of flashing this keyboard:
+- 英語入力　：CommDot配列（Optimised for Vim input）
 
-    qmk flash -kb e3w2q/te96/rev1 -km default
+|    |    |    |    |    |    |    |    |    |    |    |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Ｑ | Ｕ | Ｉ | Ｆ | Ｚ |    | ： | Ｖ | Ｓ | Ｒ | ； |
+| Ｇ | Ａ | ， | Ｅ | Ｏ |    | Ｃ | Ｔ | ． | Ｎ | Ｊ |
+| Ｂ | Ｌ | Ｍ | Ｈ | Ｗ |    | Ｘ | Ｄ | Ｐ | Ｙ | Ｋ |
+| ３ | ２ | １ | ０ | ９ |    | ８ | ７ | ６ | ５ | ４ |
+|    |    | 制 | 空 | 英 |    | 日 | 削 | 改 | 交 |    |
 
-Note:  
-  Current firmware is **rev1**.
+制：Tabキー（制表キー）
+空：Spaceキー（空白キー）
+英：英語入力に切り替え
+日：日本語入力に切り替え
 
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+|    |    |    |    |    |    |    |    |    |    |    |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| ｀ | ” | ’ | ＠ | ＾ |    | ： | ＿ | － | ＊ |    |
+| ［ | （ | ？ | ｛ | ＜ |    | ＆ | ／ | ！ | ＝ | ￥ |
+| ］ | ） | ＃ | ｝ | ＞ |    | ＼ | ＋ | ％ | ＄ | ～ |
+| ３ | ２ | １ | ０ | ９ |    | ８ | ７ | ６ | ５ | ４ |
 
+- 日本語入力：こだち配列（inspired by 薙刀式）
+
+|    |    |    |    |    |    |    |    |    |    |    |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| ← | こ | き | を | ・ |    | ： | ま | な | る | → |
+| と | し | 、 | か | に |    | く | い | 。 | ん | ー |
+| お | も | っ | て | は |    | つ | の | う | た | そ |
+| ３ | ２ | １ | ０ | ９ |    | ８ | ７ | ６ | ５ | ４ |
+
+|    |    |    |    |    |    |    |    |    |    |    |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|    | り | え | ち |    |    |    | へ | や | さ |    |
+| み | ら | れ | あ | け |    | ろ | す | れ | よ | 〜 |
+| せ | ふ | ひ | わ | め |    | む | ほ | ね | ゆ | ぬ |
+| ３ | ２ | １ | ０ | ９ |    | ８ | ７ | ６ | ５ | ４ |
+
+- ショートカット
+
+|    |    |    |    |    |    |    |    |    |    |    |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
