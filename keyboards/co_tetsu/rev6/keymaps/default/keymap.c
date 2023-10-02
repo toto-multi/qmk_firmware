@@ -22,6 +22,7 @@ enum keymap_layers {
   _ENG_,
   _JPN_,
   _SYM_,
+  _NUM_,
   _CMD_,
 };
 
@@ -30,13 +31,13 @@ enum keymap_layers {
 #define   ___JPN_   TO(_JPN_)
 #define   ___SYM_   TO(_SYM_)
 #define   ___CMD_   TO(_CMD_)
+#define   ___NUM_   TO(_NUM)
 #define   ___T_L1   LM(___ENG_, MOD_LGUI)
 #define   ___T_L2   LT(_CMD_, KC_TAB)
-#define   ___T_L3   SFT_T(KC_SPC)
-#define   ___T_R4   LM(___ENG_, MOD_LCTL)
-#define   ___T_R3   SFT_T(KC_BSPC)
-#define   ___T_R2   LT(_SYM_, KC_ENT)
-#define   ___T_R1   LM(___ENG_, MOD_RALT)
+#define   ___T_L3   LT(_NUM_, KC_SPC)
+#define   ___T_R3   LT(_SYM_, KC_BSPC)
+#define   ___T_R2   SFT_T(KC_ENT)
+#define   ___T_R1   ALT_T(KC_ESC)
 #define   ___COMM   CTL_T(KC_COMM)
 #define   ___DOT_   CTL_T(KC_DOT)
 #define   ___MENU   CTL_T(KC_F11)
@@ -52,12 +53,16 @@ enum keymap_layers {
 #define   _A_F7__   A(KC_F7)
 #define   _A_F8__   A(KC_F8)
 #define   _A_F9__   A(KC_F9)
+#define   ___SENT   S(KC_ENT)       // Shift + Enter
+#define   ___ADD_   C(KC_A)         // 加算
+#define   ___MNS_   C(KC_X)         // 減算
 #define   ___CUT_   C(KC_X)         // 切り取り
 #define   ___COPY   C(KC_C)         // コピー
 #define   ___PSTE   C(KC_V)         // 貼り付け
 #define   ___ALL_   C(KC_A)         // 全選択
 #define   ___SAVE   C(KC_S)         // 保存
 #define   ___ADRS   C(KC_L)         // アドレス欄に移動
+#define   ___CLOS   C(KC_W)         // 閉じる
 #define   ___COUT   C(KC_SLSH)      // コメントアウト
 #define   ___UNDO   C(KC_Z)         // 元に戻す
 #define   ___REDO   S(C(KC_Z))      // やり直す
@@ -68,10 +73,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ENG_] = LAYOUT(
     XXXXXXX,  KC_U   ,  KC_I   ,  XXXXXXX,  XXXXXXX, XXXXXXX,     XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_S   ,  KC_R   ,  XXXXXXX,
-    KC_Z   ,  KC_A   ,  ___COMM,  KC_F   ,  JP_COLN, XXXXXXX,     XXXXXXX,  JP_SCLN,  KC_V   ,  ___DOT_,  KC_N   ,  KC_Q   ,
+    KC_Q   ,  KC_A   ,  ___COMM,  KC_F   ,  JP_COLN, XXXXXXX,     XXXXXXX,  JP_SCLN,  KC_V   ,  ___DOT_,  KC_N   ,  KC_K   ,
     KC_G   ,  KC_L   ,  KC_M   ,  KC_E   ,  KC_O   , XXXXXXX,     XXXXXXX,  KC_C   ,  KC_T   ,  KC_P   ,  KC_Y   ,  KC_J   ,
-    KC_B   ,  KC_0   ,  KC_1   ,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  KC_6   ,  KC_7   ,  KC_K   ,
-    KC_9   ,  XXXXXXX,  XXXXXXX,  KC_2   ,  KC_3   , ___ENG_,     ___JPN_,  KC_4   ,  KC_5   ,  XXXXXXX,  XXXXXXX,  KC_8   ,
+    KC_B   ,  XXXXXXX,  XXXXXXX,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  XXXXXXX,  XXXXXXX,  KC_Z   ,
+    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX, ___ENG_,     ___JPN_,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  ___T_L2, ___T_L3,     ___T_R3,  ___T_R2,  ___T_R1,  XXXXXXX,  XXXXXXX,  XXXXXXX
   ),
 
@@ -85,12 +90,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_SYM_] = LAYOUT(
-    _______,  JP_LBRC,  JP_LPRN,  _______,  _______, _______,     _______,  _______,  _______,  JP_RPRN,  JP_RBRC,  _______,
-    JP_LABK,  JP_PLUS,  JP_QUES,  JP_ASTR,  JP_COLN, _______,     _______,  JP_SCLN,  JP_DQUO,  JP_EXLM,  JP_UNDS,  JP_RABK,
-    JP_EQL ,  JP_CIRC,  JP_DLR ,  JP_MINS,  JP_LCBR, _______,     _______,  JP_QUOT,  JP_HASH,  JP_AMPR,  JP_AT  ,  JP_YEN ,
-    JP_PERC,  KC_F10 ,  KC_F1  ,  JP_SLSH,  JP_RCBR, _______,     _______,  JP_GRV ,  JP_PIPE,  KC_F6  ,  KC_F7  ,  JP_TILD,
-    KC_F9  ,  _______,  _______,  KC_F2  ,  KC_F3  , _______,     _______,  KC_F4  ,  KC_F5  ,  _______,  _______,  KC_F8  ,
+    _______,  KC_F9   ,  KC_F8 ,  _______,  _______, _______,     _______,  _______,  _______,  JP_RPRN,  JP_RBRC,  _______,
+    KC_F13 ,  KC_F3   ,  KC_F2 ,  KC_F7  ,  KC_F12 , _______,     _______,  JP_SCLN,  JP_DQUO,  JP_EXLM,  JP_UNDS,  JP_RABK,
+    KC_F14 ,  KC_F6   ,  KC_F5 ,  KC_F1  ,  KC_F11 , _______,     _______,  JP_QUOT,  JP_HASH,  JP_AMPR,  JP_AT  ,  JP_YEN ,
+    KC_F15 ,  _______,  _______,  KC_F4  ,  KC_F10 , _______,     _______,  JP_GRV ,  JP_PIPE,  _______,  _______,  JP_TILD,
+    _______,  _______,  _______,  _______,  _______, _______,     _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _C_PGUP, _C_PGDN,     _______,  _______,  _______,  _______,  _______,  _______
+  ),
+
+  [_NUM_] = LAYOUT(
+    _______,  JP_LBRC,  JP_LPRN,  _______,  _______, _______,     _______,  _______,  _______,  KC_8   ,  KC_9   ,  _______,
+    JP_LABK,  JP_PLUS,  JP_QUES,  JP_ASTR,  JP_COLN, _______,     _______,  KC_C   ,  KC_7   ,  KC_2   ,  KC_3   ,  KC_D   ,
+    JP_EQL ,  JP_CIRC,  JP_DLR ,  JP_MINS,  JP_LCBR, _______,     _______,  KC_B   ,  KC_1   ,  KC_5   ,  KC_6   ,  KC_E   ,
+    JP_PERC,  _______,  _______,  JP_SLSH,  JP_RCBR, _______,     _______,  KC_A   ,  KC_4   ,  _______,  _______,  KC_F   ,
+    _______,  _______,  _______,  _______,  _______, _______,     KC_RGUI,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______, _______,     ___ADD_,  KC_0   , ___MNS_ ,  _______,  _______,  _______
   ),
 
   [_CMD_] = LAYOUT(
@@ -98,9 +112,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___REDO,  ___ALL_,  KC_BTN1,  KC_APP ,  ___ADRS, _______,     _______,  _A_F1__,  _A_F3__,  ___CPHS,  ___MENU,  _A_F8__,
     KC_PSCR,  KC_LEFT,  KC_RGHT,  KC_UP  ,  KC_PGUP, _______,     _______,  _A_F6__,  ___COUT,  ___PSTE,  ___COPY,  _A_F4__,
     CT_PSWD,  _______,  _______,  KC_DOWN,  KC_PGDN, _______,     _______,  _A_F9__,  ___CUT_,  _______,  _______,  _A_F5__,
-    _______,  _______,  _______,  _______,  _______, _______,     KC_RGUI,  _______,  _______,  _______,  _______,  _______,
-    _______,  _______,  _______,  _______,  _______, _______,     ___DEL_,  CT_ESC ,  ___SAVE,  _______,  _______,  _______
+    _______,  _______,  _______,  _______,  _______, _______,     _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______, _______,     ___DEL_,  ___SENT,  ___CLOS,  _______,  _______,  _______
   ),
+
 };
 
 #ifdef RGBLIGHT_ENABLE
@@ -113,14 +128,18 @@ const rgblight_segment_t PROGMEM rgb_layer_jpn[] = RGBLIGHT_LAYER_SEGMENTS(
 const rgblight_segment_t PROGMEM rgb_layer_sym[] = RGBLIGHT_LAYER_SEGMENTS(
   {0, 12, HSV_RED}
 );
-const rgblight_segment_t PROGMEM rgb_layer_fnc[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM rgb_layer_num[] = RGBLIGHT_LAYER_SEGMENTS(
+  {0, 12, HSV_ORANGE}
+);
+const rgblight_segment_t PROGMEM rgb_layer_cmd[] = RGBLIGHT_LAYER_SEGMENTS(
   {0, 12, HSV_YELLOW}
 );
 const rgblight_segment_t* PROGMEM const rgb_layers[] = RGBLIGHT_LAYERS_LIST(
   rgb_layer_eng,
   rgb_layer_jpn,
   rgb_layer_sym,
-  rgb_layer_fnc
+  rgb_layer_num,
+  rgb_layer_cmd
 );
 #endif
 
@@ -153,6 +172,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   rgblight_set_layer_state(_ENG_, layer_state_cmp(state, _ENG_));
   rgblight_set_layer_state(_JPN_, layer_state_cmp(state, _JPN_));
   rgblight_set_layer_state(_SYM_, layer_state_cmp(state, _SYM_));
+  rgblight_set_layer_state(_NUM_, layer_state_cmp(state, _NUM_));
   rgblight_set_layer_state(_CMD_, layer_state_cmp(state, _CMD_));
   #endif
 
@@ -167,6 +187,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       case CT_PSWD:
         layer_off(_JPN_);
         layer_on(_ENG_);
+        SEND_STRING("Woods");
+        tap_code16(JP_UNDS);
+        SEND_STRING("88");
+        tap_code16(JP_UNDS);
+        SEND_STRING("Bear");
+        tap_code16(JP_UNDS);
+        SEND_STRING("fc");
         return false;
       case CT_ESC:
         layer_off(_JPN_);
