@@ -65,17 +65,17 @@ enum keymap_layers {
 #define   ___CLOS   C(KC_W)         // 閉じる
 #define   ___COUT   C(KC_SLSH)      // コメントアウト
 #define   ___UNDO   C(KC_Z)         // 元に戻す
-#define   ___REDO   S(C(KC_Z))      // やり直す
-#define   ___CPHS   A(C(KC_V))      // コピー履歴
-#define   ___CPCM   A(C(KC_C))      // コピーコマンド
+#define   ___REDO   C(S(KC_Z))      // やり直す
+#define   ___CPHS   C(S(KC_V))      // コピー履歴
+#define   ___CPCM   C(S(KC_C))      // コピーコマンド
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ENG_] = LAYOUT(
     XXXXXXX,  KC_U   ,  KC_I   ,  XXXXXXX,  XXXXXXX, XXXXXXX,     XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_S   ,  KC_R   ,  XXXXXXX,
-    KC_Q   ,  KC_A   ,  ___COMM,  KC_F   ,  JP_COLN, XXXXXXX,     XXXXXXX,  JP_SCLN,  KC_V   ,  ___DOT_,  KC_N   ,  KC_K   ,
+    KC_Q   ,  KC_A   ,  ___COMM,  KC_F   ,  JP_COLN, XXXXXXX,     XXXXXXX,  JP_SCLN,  KC_V   ,  ___DOT_,  KC_N   ,  KC_Z   ,
     KC_G   ,  KC_L   ,  KC_M   ,  KC_E   ,  KC_O   , XXXXXXX,     XXXXXXX,  KC_C   ,  KC_T   ,  KC_P   ,  KC_Y   ,  KC_J   ,
-    KC_B   ,  XXXXXXX,  XXXXXXX,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  XXXXXXX,  XXXXXXX,  KC_Z   ,
+    KC_B   ,  XXXXXXX,  XXXXXXX,  KC_H   ,  KC_W   , XXXXXXX,     XXXXXXX,  KC_X   ,  KC_D   ,  XXXXXXX,  XXXXXXX,  KC_K   ,
     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX, ___ENG_,     ___JPN_,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  ___T_L2, ___T_L3,     ___T_R3,  ___T_R2,  ___T_R1,  XXXXXXX,  XXXXXXX,  XXXXXXX
   ),
@@ -90,26 +90,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_SYM_] = LAYOUT(
-    _______,  KC_F9   ,  KC_F8 ,  _______,  _______, _______,     _______,  _______,  _______,  JP_RPRN,  JP_RBRC,  _______,
-    KC_F13 ,  KC_F3   ,  KC_F2 ,  KC_F7  ,  KC_F12 , _______,     _______,  JP_SCLN,  JP_DQUO,  JP_EXLM,  JP_UNDS,  JP_RABK,
-    KC_F14 ,  KC_F6   ,  KC_F5 ,  KC_F1  ,  KC_F11 , _______,     _______,  JP_QUOT,  JP_HASH,  JP_AMPR,  JP_AT  ,  JP_YEN ,
-    KC_F15 ,  _______,  _______,  KC_F4  ,  KC_F10 , _______,     _______,  JP_GRV ,  JP_PIPE,  _______,  _______,  JP_TILD,
+    _______,  KC_F9   ,  KC_F8 ,  _______,  _______, _______,     _______,  _______,  _______,  JP_HASH,  JP_RCBR,  _______,
+    KC_F13 ,  KC_F3   ,  KC_F2 ,  KC_F7  ,  KC_F12 , _______,     _______,  JP_GRV ,  JP_LCBR,  JP_QUES,  JP_RPRN,  JP_SCLN,
+    KC_F14 ,  KC_F6   ,  KC_F5 ,  KC_F1  ,  KC_F11 , _______,     _______,  JP_QUOT,  JP_LPRN,  JP_AT  ,  JP_RBRC,  JP_TILD,
+    KC_F15 ,  _______,  _______,  KC_F4  ,  KC_F10 , _______,     _______,  JP_DQUO,  JP_LBRC,  _______,  _______,  JP_YEN ,
     _______,  _______,  _______,  _______,  _______, _______,     _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _C_PGUP, _C_PGDN,     _______,  _______,  _______,  _______,  _______,  _______
   ),
 
   [_NUM_] = LAYOUT(
-    _______,  JP_LBRC,  JP_LPRN,  _______,  _______, _______,     _______,  _______,  _______,  KC_8   ,  KC_9   ,  _______,
-    JP_LABK,  JP_PLUS,  JP_QUES,  JP_ASTR,  JP_COLN, _______,     _______,  KC_C   ,  KC_7   ,  KC_2   ,  KC_3   ,  KC_D   ,
-    JP_EQL ,  JP_CIRC,  JP_DLR ,  JP_MINS,  JP_LCBR, _______,     _______,  KC_B   ,  KC_1   ,  KC_5   ,  KC_6   ,  KC_E   ,
-    JP_PERC,  _______,  _______,  JP_SLSH,  JP_RCBR, _______,     _______,  KC_A   ,  KC_4   ,  _______,  _______,  KC_F   ,
+    _______,  JP_LABK,  JP_RABK,  _______,  _______, _______,     _______,  _______,  _______,  KC_8   ,  KC_9   ,  _______,
+    JP_AMPR,  JP_EQL ,  JP_EXLM,  JP_SLSH,  JP_COLN, _______,     _______,  KC_C   ,  KC_7   ,  KC_2   ,  KC_3   ,  KC_D   ,
+    JP_ASTR,  JP_CIRC,  JP_DLR ,  JP_PLUS,  JP_PIPE, _______,     _______,  KC_B   ,  KC_1   ,  KC_5   ,  KC_6   ,  KC_E   ,
+    JP_PERC,  _______,  _______,  JP_MINS,  JP_UNDS, _______,     _______,  KC_A   ,  KC_4   ,  _______,  _______,  KC_F   ,
     _______,  _______,  _______,  _______,  _______, _______,     KC_RGUI,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______, _______,     ___ADD_,  KC_0   , ___MNS_ ,  _______,  _______,  _______
   ),
 
   [_CMD_] = LAYOUT(
-    _______,  ___UNDO,  KC_BTN2,  _______,  _______, _______,     _______,  _______,  _______,  ___CPCM,  _A_F7__,  _______,
-    ___REDO,  ___ALL_,  KC_BTN1,  KC_APP ,  ___ADRS, _______,     _______,  _A_F1__,  _A_F3__,  ___CPHS,  ___MENU,  _A_F8__,
+    _______,  ___UNDO,  KC_BTN2,  _______,  _______, _______,     _______,  _______,  _______,  ___CPCM,  ___MENU,  _______,
+    ___REDO,  ___ALL_,  KC_BTN1,  KC_APP ,  ___ADRS, _______,     _______,  _A_F1__,  _A_F3__,  ___CPHS,  _A_F7__,  _A_F8__,
     KC_PSCR,  KC_LEFT,  KC_RGHT,  KC_UP  ,  KC_PGUP, _______,     _______,  _A_F6__,  ___COUT,  ___PSTE,  ___COPY,  _A_F4__,
     CT_PSWD,  _______,  _______,  KC_DOWN,  KC_PGDN, _______,     _______,  _A_F9__,  ___CUT_,  _______,  _______,  _A_F5__,
     _______,  _______,  _______,  _______,  _______, _______,     _______,  _______,  _______,  _______,  _______,  _______,

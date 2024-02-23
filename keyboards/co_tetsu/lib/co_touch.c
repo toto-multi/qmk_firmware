@@ -131,7 +131,7 @@ const PROGMEM TEXT TEXT_TABLE[] = {
   { B_HAN, CT_01, "wakari"},                // わかり
   { B_HAN, CT_03, "tyotto"},                // ちょっと
   { B_HAN, CT_08, "desu"},                  // です
-  { B_HAN, CT_10, "kedo,"},                 // けど、
+  { B_HAN, CT_10, "nihadousurebaii?"},      // にはどうすればいい？
   { B_HAN, CT_11, "itasimasu."},            // いたします。
   { B_HAN, CT_12, "arigatougozaimasu"},     // ありがとうございます
   { B_HAN, CT_14, "nituite"},               // について
